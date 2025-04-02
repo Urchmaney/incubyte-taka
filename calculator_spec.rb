@@ -22,4 +22,9 @@ RSpec.describe "add calculator" do
     expect(add "//;\n1;2").to eq(3)
     expect(add "//-\n 3 - 4 \n 5").to eq(12)
   end
+
+  it "should raise error if negative number is present" do
+    expect { add "1, -2, 3" }.to raise_error(NegativeNumbersError).with_message("negative numbers not allowed -2")
+    expect { add "1, -2, 3, -4" }.to raise_error(NegativeNumbersError).with_message("negative numbers not allowed -2, -4")
+  end
 end
