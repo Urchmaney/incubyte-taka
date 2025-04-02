@@ -8,4 +8,8 @@ RSpec.describe "calculator" do
   it "should add all numbers in comma seperated string" do
     expect(add "4, 5").to eq(9)
   end
+
+  it "should add any number of comma seperated string" do
+    expect(add "4, 5, 7, 1").to eq(17)
+  end
 end
