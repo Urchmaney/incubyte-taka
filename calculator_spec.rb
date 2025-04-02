@@ -17,4 +17,9 @@ RSpec.describe "add calculator" do
     expect(add "1\n2,3").to eq(6)
     expect(add "3\n 4 \n  8").to eq(15)
   end
+
+  it "should allow for change of delimiter" do
+    expect(add "//;\n1;2").to eq(3)
+    expect(add "//-\n 3 - 4 \n 5").to eq(12)
+  end
 end
