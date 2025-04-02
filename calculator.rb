@@ -1,3 +1,3 @@
 def add(str)
-  return 0
+  (str.split ',').map(&:to_i).sum
 end
