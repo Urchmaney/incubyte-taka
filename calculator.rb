@@ -5,6 +5,8 @@ class NegativeNumbersError < StandardError
 end
 
 def add(str)
+  retrun unless str.is_a? String
+
   negative_numbers = []
   values = []
   delimiter = ","
